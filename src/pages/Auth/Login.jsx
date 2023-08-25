@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import {Link} from "react-router-dom"
+
 import "./login.css"
 
 
@@ -48,7 +50,7 @@ export default function Login() {
             <button className='primary-btn'>{isSignup?"Signup":"Login"}</button>
           </div>
         </form>
-        <p>{!isSignup?"New here ? ":"Already have a account ?"} <a href="#" onClick={()=>setSignUp(()=>!isSignup)} >{isSignup?"signup":"login"}</a> </p>
+        <p>{!isSignup?"New here ? ":"Already have a account ?"} <Link onClick={()=>setSignUp(()=>!isSignup)} >{isSignup?"signup":"login"}</Link> </p>
       </div>
        
       
