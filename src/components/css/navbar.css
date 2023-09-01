@@ -1,0 +1,70 @@
+/* Navbar styles */
+.navbar {
+    border-bottom:2px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    color: black;
+  }
+  
+  /* Logo styles */
+ .navbar .left{
+    display: flex ;
+    align-items: center;
+    gap:3rem;
+ }
+  
+  /* Search box styles */
+  .search-box {
+    display: flex;
+    align-items: center;
+  }
+  
+  input[type="text"] {
+    border: none;
+    border: 2px solid black;
+    background-color: transparent;
+    color: black;
+    padding: 8px;
+    border-radius: 20px;
+    margin-right: 10px;
+    width: 200px;
+  }
+  
+  button {
+    background-color: transparent;
+    border: none;
+    color:#ff7918;
+    cursor: pointer;
+    position: relative;
+    right: 3rem;
+  }
+  
+  /* Select box styles */
+  select {
+    text-align: center;
+    width:10em;
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 8px;
+    border:1px solid black;
+    border-radius: 20px;
+  }
+  
+  /* Profile icon styles */
+  .profile-icon {
+    font-size: 24px;
+    background-color: #ff7918;
+    color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+    

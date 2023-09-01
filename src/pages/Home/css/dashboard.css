@@ -1,0 +1,56 @@
+
+
+/* Define the grid layout */
+.dashboard {
+    display: grid;
+    grid-template-columns:280px 2fr;
+    grid-template-rows: 100vh;
+    overflow-y: hidden  ;
+}
+
+/* Style the sidebar */
+/* Style the sidebar */
+.sidebar-container {
+
+   
+}
+
+/* Style the main content area */
+.main-content {
+    display: grid;
+    grid-template-rows: 4rem auto;
+    grid-gap: 20px;
+    
+}
+
+/* Style the navbar */
+.navbar-container{
+   
+}
+
+.blog-container{
+    overflow-y: auto;
+
+}
+
+/* Hide the default scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track (the background of the scrollbar) */
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Change this to your desired background color */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Change this to your desired scrollbar color */
+    border-radius: 3px; /* Rounded corners for the scrollbar handle */
+}
+
+/* When hovering over the scrollbar */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Change this to your desired hover color */
+}
+
