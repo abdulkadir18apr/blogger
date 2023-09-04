@@ -10,7 +10,15 @@ import "./css/blogcard.css"
 export function UserBlogCard() {
   return (
     <div className='blogCard'>
+        <div className="blog-header">
         <h1>My firstBlog</h1>
+        <div className="settings">
+            <span className='badge'>Approved</span>
+            <button className='primary-btn'>Edit</button>
+        </div>
+
+        </div>
+       
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti sequi architecto fugiat unde delectus iure temporibus, laborum officiis magnam voluptatum labore laudantium. Corrupti vero dicta nulla enim officiis voluptate labore molestias nisi dolor suscipit eligendi fuga dignissimos iusto ex delectus eos voluptas, natus accusantium voluptatibus odit! Nisi iusto officiis inventore.</p>
 
         <div className="comments-section">

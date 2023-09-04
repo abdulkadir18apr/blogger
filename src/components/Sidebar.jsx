@@ -4,21 +4,24 @@ import { LayoutDashboard } from 'lucide-react';
 import { PenTool } from 'lucide-react';
 import { Braces } from 'lucide-react';
 import { LogOut } from 'lucide-react';
-import {Link} from "react-router-dom";
+import {Link,NavLink, useLocation} from "react-router-dom";
 
 import './css/sidebar.css' // Import the CSS file with the styles
 
 export const Sidebar=()=> {
+    const location = useLocation();
+    const pathname=location.pathname;
+
     return (
         <div className="sidebar">
             <div className="sidebar-header">
             <h3><span className='highlight'>Company</span>  Name</h3>
             </div>
-            <ul className="sidebar-menu">
-                <li className='active-nav'> <LayoutDashboard/> <Link to="/user"> Dashboard</Link></li>
-                <li><PenTool/><a href="#">Write Post</a></li>
-                <li><Braces /><Link to="/user/myblogs">My Blogs</Link></li>
-            </ul>
+            <nav className="sidebar-menu">
+                <li className={pathname==="/user"?"active-nav":""}> <LayoutDashboard/> <NavLink to="/user" > Dashboard</NavLink></li>
+                <li className={pathname==="/user/writeBlog"?"active-nav":""}><PenTool/><NavLink to="/user/writeBlog"   >Write Post</NavLink></li>
+                <li className={pathname==="/user/myblogs"?"active-nav":""}><Braces /><NavLink  to="/user/myblogs">My Blogs</NavLink></li>
+            </nav>
             <div className="logout-btn">
             <button className='primary-btn'><LogOut/>   Logout</button>
             </div>

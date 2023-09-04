@@ -1,0 +1,38 @@
+/* BlogEditor.css */
+
+.editor-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .category-container,
+  .heading-container {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+  }
+  
+  #category,
+  #heading {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+  #heading{
+    width:98%
+  }
+  
+  .editor {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+  }
+  

@@ -95,3 +95,26 @@
 .controls-container{
     display: flex;
 }
+.blog-header{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+}
+.settings{
+    display: flex;
+    align-items: center;
+    gap:4rem;
+}
+.badge{
+    background-color: rgb(245, 216, 216);
+    font-size: small;
+    font-weight: 600;
+    color:red;
+    padding:5px 5px;
+    border-radius: 20px;
+}
+.reject{
+    color:green;
+    background-color:rgb(217, 242, 217) ;
+
+}

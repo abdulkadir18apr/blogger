@@ -7,6 +7,7 @@ import Sidebar from './components/Sidebar';
 import Login from './pages/Auth/Login';
 import {Dashboard} from './pages/Home/Dashboard';
 import { UserBlog } from './pages/Home/Userblog';
+import { PostBlog } from './pages/Home/PostBlog';
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <Route path='/' element={<Login/>} />
         <Route path='/user' element={<Dashboard/>} />
         <Route path='/user/myblogs' element={<UserBlog/>} />
-
+        <Route path='/user/writeBlog' element={<PostBlog/>} />
       </Routes>
     </div>
   );
