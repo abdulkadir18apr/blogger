@@ -2,21 +2,25 @@ import React, { useState } from 'react'
 import {Link} from "react-router-dom"
 
 import "./login.css"
+import { useUserContext } from '../../context/UserContext';
 
 
 
 export default function Login() {
+
+
+  const {userLogin,userSignup}=useUserContext()
 
   const [isSignup,setSignUp]=useState(false);
   const [isValidEmail,setIsValidEmail]=useState(false);
   const [isvalidPassword,setIsvalidPassword]=useState(false)
   const [invalidMsg,setInvalidMsg]=useState({name:"",email:"",password:"",contact:"",gender:"",designation:""})
 
-  const[credentials,setcredentials]=useState({name:"",contact:"",email:"",password:"",gender:"",designation:""});
+  const[credentials,setcredentials]=useState({name:"",contact:"",email:"",password:"",gender:"",designation:"",contact:""});
 
 
   const validateEmail = (email) => {
-    const pattern = /^[a-zA-Z0-9._%+-]+@nucleustech\.com$/;
+    const pattern = /^[a-zA-Z0-9._%+-]+@nucleusteq\.com$/;
     return pattern.test(email);
   };
 
@@ -53,12 +57,22 @@ const showValidateMsg=(feild,msg)=>{
 
   const inputChangeHandler=(e)=>{
     setcredentials(()=>({...credentials,[e.target.name]:e.target.value}));
-    console.log(invalidMsg)
   }
 
 
   const signupBtnClickHandler=(e)=>{
     e.preventDefault();
+    if(!isSignup && credentials.email!=="" && credentials.password!==""){
+      userLogin(credentials.email,credentials.password);
+      console.log("loginedINN...")
+    }
+    else{
+      const nameArr=credentials?.name?.split(' ')
+      const firstName=nameArr[0]
+      const lastName=nameArr[1]
+      userSignup(firstName,lastName,credentials.email,credentials.password,credentials.designation.credentials?.contact,credentials.gender);
+      console.log("signuppp")
+    }
   }
 
 
@@ -97,11 +111,11 @@ const showValidateMsg=(feild,msg)=>{
 
           {isSignup &&   <div className="form-element">
             <label htmlFor="gender" className='starlabel'> Gender</label>
-            <select name="gender" id="gender" onChange={inputChangeHandler} >
-
+            <select name="gender" id="gender" onChange={inputChangeHandler}  >
+               <option value="">Select an option</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
-              <option value="female">other</option>
+              <option value="other">other</option>
             </select> 
        
         </div>}
@@ -109,7 +123,6 @@ const showValidateMsg=(feild,msg)=>{
           {isSignup &&   <div className="form-element">
             <label htmlFor="designation" className='starlabel'> Designation</label>
             <select name="designation" id="designation" onChange={inputChangeHandler} >
-
               <option value="intern">Intern</option>
               <option value="software Engineer">software Engineer</option>
               <option value="sr software engineer">Sr. Software Engineer</option>

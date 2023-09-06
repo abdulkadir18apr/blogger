@@ -1,12 +1,12 @@
 import React from 'react';
 import { Editor } from '@tinymce/tinymce-react';
-import './css/blogEditor.css';  // Import your CSS file
+import './css/blogEditor.css';
 
 const BlogEditor = () => {
   const apiKey = 'xqhhbi3kfh3ngwxnap1se6o41l8d783mujrjeeybij1wxli2';
 
   const handleEditorChange = (content, editor) => {
-    // Do something with the content, e.g., save it to state
+    
     console.log('Content was updated:', content);
   };
 

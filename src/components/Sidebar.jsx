@@ -7,8 +7,10 @@ import { LogOut } from 'lucide-react';
 import {Link,NavLink, useLocation} from "react-router-dom";
 
 import './css/sidebar.css' // Import the CSS file with the styles
+import { useUserContext } from '../context/UserContext';
 
 export const Sidebar=()=> {
+    const {userLogout}=useUserContext()
     const location = useLocation();
     const pathname=location.pathname;
 
@@ -23,7 +25,7 @@ export const Sidebar=()=> {
                 <li className={pathname==="/user/myblogs"?"active-nav":""}><Braces /><NavLink  to="/user/myblogs">My Blogs</NavLink></li>
             </nav>
             <div className="logout-btn">
-            <button className='primary-btn'><LogOut/>   Logout</button>
+            <button className='primary-btn' onClick={()=>userLogout()}><LogOut/>   Logout</button>
             </div>
          
         </div>

@@ -2,7 +2,14 @@ import React from 'react';
 import  './css/navbar.css' // Import the CSS file with the styles
 
 import { Search } from 'lucide-react';
+import { useUserContext } from '../context/UserContext';
 function Navbar() {
+
+  const {state}=useUserContext();
+
+  const userLogo=state.userId!==""?state?.userDetails?.firstname[0]:"R"
+
+  
   return (
     <nav className="navbar">
       <div className="left">
@@ -17,7 +24,7 @@ function Navbar() {
         </select>
       </div>
       <div className="right">
-        <div className="profile-icon">R</div>
+        <div className="profile-icon">{userLogo.toUpperCase()}</div>
       </div>
     </nav>
   );
